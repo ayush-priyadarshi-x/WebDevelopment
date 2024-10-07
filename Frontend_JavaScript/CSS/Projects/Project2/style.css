@@ -1,0 +1,43 @@
+/*                    Animations                   */
+@keyframes animation {
+  0%,
+  100% {
+    transform: translateZ(0px);
+  }
+  50% {
+    transform: translateZ(-200px);
+  }
+}
+/*                     Default                     */
+html {
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;
+}
+
+/*                   Main Layout                   */
+.container-fluid {
+  height: 100vh;
+  background-color: #e056fd;
+}
+.row {
+  height: 300px;
+  width: 500px;
+  transform-style: preserve-3d;
+  transform: perspective(500px) rotateX(60deg);
+  /* animation: animation 1s infinite alternate; */
+}
+.circles {
+  border-radius: 50%;
+  border: 5px solid white;
+  box-shadow: 0px 5px 0px #535c68, inset 0px 5px 0px #535c68;
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  height: calc(var(--i) * 10%);
+  width: calc(var(--i) * 10%);
+  animation: animation 3s ease-in infinite alternate;
+  animation-delay: calc(var(--i) * 100ms);
+}

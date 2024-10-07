@@ -1,0 +1,56 @@
+<form class="row justify-content-center" action="/users/signup" method="POST">
+  <i class="fa-solid fa-user fa-5x mt-2 mb-4" style="width: 10%">+</i>
+
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      id="name"
+      name="name"
+      placeholder="Name"
+      value="<%= typeof name != 'undefined' ? name : '' %>"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      name="email"
+      placeholder="something@gmail.com"
+      value="<%= typeof email != 'undefined' ? email : '' %>"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      name="password"
+      placeholder="Password"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="confirmPassword" class="form-label">Confirm Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="confirmPassword"
+      name="confirmPassword"
+      placeholder="Confirm Password"
+    />
+  </div>
+  <button
+    type="submit"
+    class="btn btn-md btn-danger"
+    style="color: white; width: 70%"
+  >
+    Register
+  </button>
+  <p class="text-center mt-2">
+    Have an account? <a href="/users/login">Log In</a>
+  </p>
+</form>

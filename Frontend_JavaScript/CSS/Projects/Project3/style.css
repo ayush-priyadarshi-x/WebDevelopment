@@ -1,0 +1,25 @@
+/*--------------------------Default--------------------------*/
+html {
+  overflow-y: hidden;
+}
+body {
+  overflow-y: hidden;
+}
+/*---------------------------Layout---------------------------*/
+.container-fluid {
+  height: 100vh;
+  position: absolute;
+}
+h2 {
+  font-size: 12vh;
+}
+h2 span {
+  display: inline-block;
+  font-size: 6vh;
+}
+.box {
+  box-shadow: 0px 10px 90px black;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}

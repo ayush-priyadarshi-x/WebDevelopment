@@ -1,0 +1,25 @@
+@keyframes bg-background {
+  from {
+    background-position: right;
+  }
+  to {
+    background-position: left;
+  }
+}
+:root {
+  --first-color: #ff9ff3;
+  --second-color: #f368e0;
+  --third-color: #be2edd;
+  --fourth-color: black;
+  --fifth-color: white;
+}
+.container-fluid {
+  background-size: 500%;
+  background-image: linear-gradient(145deg, #ff6348, #5352ed, #ffa502, #78e08f);
+  height: 100vh;
+  animation: bg-background 20000ms infinite alternate;
+}
+.row {
+  background-color: #dfe4ea;
+  box-shadow: 2px 3px 7px var(--fourth-color);
+}

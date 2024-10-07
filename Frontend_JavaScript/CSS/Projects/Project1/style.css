@@ -1,0 +1,100 @@
+/*            Animation            */
+@keyframes vapourAnimation {
+  0% {
+    transform: translateY(0px);
+    opacity: 0.8;
+    transform: scale(5);
+  }
+  25% {
+    transform: translateY(0px) scale(4);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(3);
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0.9;
+    transform: translateY(-200px);
+  }
+}
+
+/*            Default Layout           */
+html {
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;
+}
+/*           Main Styling           */
+.container-fluid {
+  height: 100vh;
+}
+.cup {
+  width: 100%;
+}
+.upper-part {
+  border-radius: 48% 52% 51% 49% / 48% 48% 52% 52%;
+  height: 8vh;
+  width: 15vw;
+  transform: translateY(30px);
+}
+.coffee {
+  border-radius: 50%;
+  background-color: #cd6133;
+  height: 72%;
+  width: 90%;
+}
+.reflection {
+  border-radius: 50%;
+  background-color: #636e72;
+  height: 90%;
+}
+.vapours {
+  height: 10vh;
+  width: 100%;
+  box-sizing: border-box;
+  transform: translateY(30px);
+}
+.vapour {
+  width: 20%;
+  height: 100%;
+}
+.string {
+  border-radius: 50%;
+  height: 100%;
+  width: 5px;
+  margin-left: 1px;
+  margin-right: 1px;
+  animation: vapourAnimation 5s infinite;
+  opacity: 0;
+  filter: blur(8px);
+  animation-delay: calc(var(--i) * -0.5s);
+}
+.middle {
+  height: 25vh;
+  width: 15vw;
+}
+.handle {
+  border: 25px solid rgba(var(--bs-light-rgb), var(--bs-bg-opacity));
+  border-left: 25px solid transparent;
+  border-bottom: 25px solid transparent;
+  height: 104%;
+  z-index: 5;
+  width: 82%;
+  border-radius: 96%;
+  transform: rotate(50deg) translate(75px, -64px);
+}
+.lower-part {
+  width: 15vw;
+  height: 5vh;
+  border-radius: 48% 52% 51% 49% / 0% 0% 100% 100%;
+  box-shadow: 0px 10px 12px #a4b0be;
+  z-index: 5;
+}
+.stand {
+  width: 30vw;
+  height: 15vh;
+  border-radius: 48% 52% 51% 49% / 54% 54% 46% 46%;
+  transform: translateY(-70px);
+}

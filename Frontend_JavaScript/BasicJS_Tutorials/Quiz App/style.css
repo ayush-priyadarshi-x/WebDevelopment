@@ -1,0 +1,30 @@
+/*      For Animation      */
+@keyframes containerAnimation {
+}
+/*      For Layout      */
+* {
+  font-family: "Poppins", sans-serif;
+}
+html {
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.container-fluid {
+  background-color: blueviolet;
+  height: 100vh;
+}
+.options {
+  border: 1px solid black;
+}
+.options:hover {
+  background-color: rgb(255, 252, 248);
+}
+.btn {
+  width: 40%;
+}
+.heading {
+  border-bottom: 1px solid blueviolet;
+}

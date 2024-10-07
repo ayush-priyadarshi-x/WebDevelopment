@@ -1,0 +1,21 @@
+.container {
+  border: 5px solid black;
+}
+.row {
+  border: 3px solid red;
+}
+.col-3 {
+  border: 2px solid green;
+}
+.orange {
+  background-color: orange;
+}
+.pink {
+  background-color: pink;
+}
+.blue {
+  background-color: blue;
+}
+.yellow {
+  background-color: yellow;
+}

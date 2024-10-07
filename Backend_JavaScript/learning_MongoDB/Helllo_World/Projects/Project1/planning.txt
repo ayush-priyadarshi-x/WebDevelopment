@@ -1,0 +1,28 @@
+VOTTING APPLICATION
+WHAT??
+A functionality where users can select their candidates.
+
+
+USERS
+
+1. user sign in / sign up
+2. see the list of candidates
+3. vote on of the candidates, after voting the user cannot vote again
+4. A route showing the list of candidates and their live votes.
+5. voter must contain unquie id code: VoterID code
+6. there should be one candidate who should be able to maintain the names of candidate but can't vote
+7. candidates can change their passwords
+8. user can login with only adhar card and password
+
+
+
+//Comments
+/*====================================Importing Dependencies===================================*/
+/*==================================End Importing Dependencies=================================*/
+/*==========================================Actual Code========================================*/
+/*=========================================End Actual Code=====================================*/
+/*============================================Exporting========================================*/
+/*==========================================End Exporting======================================*/
+
+    console.log(error);
+    res.status(500).json("Invalid Token");

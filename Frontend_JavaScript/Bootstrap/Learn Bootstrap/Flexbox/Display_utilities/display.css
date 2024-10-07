@@ -1,0 +1,27 @@
+.container {
+  border: 5px solid black;
+}
+.row {
+  border: 3px solid red;
+}
+.col-2 {
+  border: 1px solid greenyellow;
+}
+.blue {
+  background-color: skyblue;
+}
+.wheat {
+  background-color: wheat;
+}
+.yellow {
+  background-color: yellow;
+}
+.red {
+  background-color: rgb(255, 83, 83);
+}
+.yellow_second {
+  background-color: rgb(222, 255, 103);
+}
+.pink {
+  background-color: pink;
+}

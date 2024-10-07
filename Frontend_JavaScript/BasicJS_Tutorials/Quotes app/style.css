@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: none;
+}
+.mycontainer {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("background.png");
+  background-size: cover;
+  background-position: center;
+  flex-direction: column;
+}
+.main {
+  border-radius: 30px;
+  height: 70%;
+  width: 50%;
+  background-color: white;
+  display: grid;
+  grid-template-rows: 20% 68% 12%;
+  grid-template-columns: 20% 60% 20%;
+  box-shadow: 5px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+.garamond {
+  font-family: "Lobster Two", sans-serif;
+}
+.operators {
+  grid-area: 2 / 2 / 3 / 3;
+  grid-area: 2 / 2 / 3 / 3;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.main_head {
+  text-align: center;
+  grid-area: 1 / 2 / 2 / 3;
+}
+.buttons {
+  grid-area: 3 / 2 / 4 / 3;
+  display: flex;
+  justify-content: space-evenly;
+}
+.border {
+  border-radius: 30px;
+  width: 40%;
+  margin-bottom: 2px;
+}
+.generator {
+  border: none;
+  color: white;
+  background-color: rgb(83, 83, 255);
+}
+.tweet {
+  border: 2px solid rgb(83, 83, 255);
+  background-color: white;
+}
+.generator:hover {
+  background-color: rgb(45 45 228);
+}
+.tweet:hover {
+  background: #f3f3f3;
+}
+.quote {
+  grid-area: 1 / 1 / 2 / 4;
+  font-size: 23px;
+}
+.person {
+  grid-area: 2 / 1 / 3 / 3;
+  font-size: 20px;
+  text-align: end;
+}
+@media screen and (max-width: 800px) {
+  .border {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .quote {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 912px) {
+  .main {
+    width: 85%;
+  }
+}

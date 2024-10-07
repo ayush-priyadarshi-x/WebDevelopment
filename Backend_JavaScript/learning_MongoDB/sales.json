@@ -1,0 +1,363 @@
+[
+  {
+    "_id": "1",
+    "name": "Product Alpha",
+    "quantity": 2,
+    "comments": [
+      {
+        "like": true,
+        "review": "Great product, highly recommended!"
+      },
+      {
+        "like": false,
+        "review": "Product arrived damaged, not satisfied."
+      }
+    ],
+    "customer_description": {
+      "skin_color": "Fair",
+      "nationality": "American"
+    }
+  },
+  {
+    "_id": "2",
+    "name": "Product Beta",
+    "quantity": 5,
+    "comments": [
+      {
+        "like": true,
+        "review": "Amazing quality, exceeded expectations!"
+      },
+      {
+        "like": true,
+        "review": "Very satisfied with the purchase, thank you!"
+      }
+    ],
+    "customer_description": {
+      "skin_color": "Medium",
+      "nationality": "Chinese"
+    }
+  },
+  {
+    "_id": "3",
+    "name": "Product Gamma",
+    "quantity": 1,
+    "comments": [
+      {
+        "like": false,
+        "review": "Not what I expected, disappointed."
+      },
+      {
+        "like": false,
+        "review": "Poor quality, regret buying it."
+      }
+    ],
+    "customer_description": {
+      "skin_color": "Dark",
+      "nationality": "Brazilian"
+    }
+  },
+  {
+    "_id": "4",
+    "name": "Product Delta",
+    "quantity": 3,
+    "comments": [
+      {
+        "like": true,
+        "review": "Excellent product, very happy with the purchase!"
+      },
+      {
+        "like": true,
+        "review": "Exactly what I needed, thank you!"
+      }
+    ],
+    "customer_description": {
+      "skin_color": "Dark",
+      "nationality": "French"
+    }
+  },
+  {
+    "_id": "5",
+    "name": "Product Echo",
+    "quantity": 4,
+    "comments": [
+      {
+        "like": true,
+        "review": "Excellent service, quick delivery!"
+      },
+      {
+        "like": true,
+        "review": "Top-notch quality, very impressed."
+      }
+    ],
+    "customer_description": {
+      "skin_color": "Medium",
+      "nationality": "Spanish"
+    }
+  },
+  {
+    "_id": "6",
+    "name": "Product Foxtrot",
+    "quantity": 6,
+    "comments": [
+      {
+        "like": true,
+        "review": "Fantastic product, exceeded my expectations."
+      },
+      {
+        "like": false,
+        "review": "Disappointed with the packaging, but product is good."
+      }
+    ],
+    "customer_description": {
+      "skin_color": "Fair",
+      "nationality": "Italian"
+    }
+  },
+  {
+    "_id": "7",
+    "name": "Product Golf",
+    "quantity": 2,
+    "comments": [
+      {
+        "like": false,
+        "review": "Not as described, poor quality."
+      },
+      {
+        "like": false,
+        "review": "Product arrived late, very unsatisfied."
+      }
+    ],
+    "customer_description": {
+      "skin_color": "Dark",
+      "nationality": "Mexican"
+    }
+  },
+  {
+    "_id": "8",
+    "name": "Product Hotel",
+    "quantity": 3,
+    "comments": [
+      {
+        "like": true,
+        "review": "Great value for the price, highly recommend!"
+      },
+      {
+        "like": true,
+        "review": "Very happy with the purchase, thank you!"
+      }
+    ],
+    "customer_description": {
+      "skin_color": "Fair",
+      "nationality": "Australian"
+    }
+  },
+  {
+    "_id": "9",
+    "name": "Product India",
+    "quantity": 1,
+    "comments": [
+      {
+        "like": true,
+        "review": "Exactly what I needed, perfect fit!"
+      },
+      {
+        "like": false,
+        "review": "Product arrived damaged, disappointed."
+      }
+    ],
+    "customer_description": {
+      "skin_color": "Dark",
+      "nationality": "Russian"
+    }
+  },
+  {
+    "_id": "10",
+    "name": "Product Juliet",
+    "quantity": 4,
+    "comments": [
+      {
+        "like": true,
+        "review": "Great product, highly recommended!"
+      },
+      {
+        "like": false,
+        "review": "Product did not meet my expectations."
+      }
+    ],
+    "customer_description": {
+      "skin_color": "Medium",
+      "nationality": "French"
+    }
+  },
+  {
+    "_id": "11",
+    "name": "Product Kilo",
+    "quantity": 6,
+    "comments": [
+      {
+        "like": true,
+        "review": "Excellent service, quick delivery!"
+      },
+      {
+        "like": true,
+        "review": "Very satisfied with the purchase, thank you!"
+      }
+    ],
+    "customer_description": {
+      "skin_color": "Fair",
+      "nationality": "Canadian"
+    }
+  },
+  {
+    "_id": "12",
+    "name": "Product Lima",
+    "quantity": 2,
+    "comments": [
+      {
+        "like": false,
+        "review": "Not as described, poor quality."
+      },
+      {
+        "like": false,
+        "review": "Product arrived damaged, disappointed."
+      }
+    ],
+    "customer_description": {
+      "skin_color": "Dark",
+      "nationality": "Japanese"
+    }
+  },
+  {
+    "_id": "13",
+    "name": "Product Mike",
+    "quantity": 3,
+    "comments": [
+      {
+        "like": true,
+        "review": "Highly recommended, great value for money!"
+      },
+      {
+        "like": false,
+        "review": "Product quality could be improved."
+      }
+    ],
+    "customer_description": {
+      "skin_color": "Fair",
+      "nationality": "Swedish"
+    }
+  },
+  {
+    "_id": "14",
+    "name": "Product November",
+    "quantity": 1,
+    "comments": [
+      {
+        "like": true,
+        "review": "Exactly what I needed, perfect fit!"
+      },
+      {
+        "like": false,
+        "review": "Product arrived damaged, disappointed."
+      }
+    ],
+    "customer_description": {
+      "skin_color": "Dark",
+      "nationality": "Norwegian"
+    }
+  },
+  {
+    "_id": "15",
+    "name": "Product Oscar",
+    "quantity": 4,
+    "comments": [
+      {
+        "like": true,
+        "review": "Top-notch quality, very impressed."
+      },
+      {
+        "like": false,
+        "review": "Product did not meet my expectations."
+      }
+    ],
+    "customer_description": {
+      "skin_color": "Medium",
+      "nationality": "Dutch"
+    }
+  },
+  {
+    "_id": "16",
+    "name": "Product Papa",
+    "quantity": 6,
+    "comments": [
+      {
+        "like": true,
+        "review": "Fantastic product, exceeded my expectations!"
+      },
+      {
+        "like": true,
+        "review": "Very satisfied with the purchase, thank you!"
+      }
+    ],
+    "customer_description": {
+      "skin_color": "Fair",
+      "nationality": "Irish"
+    }
+  },
+  {
+    "_id": "17",
+    "name": "Product Quebec",
+    "quantity": 2,
+    "comments": [
+      {
+        "like": false,
+        "review": "Product arrived late, very unsatisfied."
+      },
+      {
+        "like": false,
+        "review": "Disappointed with the quality, expected better."
+      }
+    ],
+    "customer_description": {
+      "skin_color": "Dark",
+      "nationality": "Portuguese"
+    }
+  },
+  {
+    "_id": "18",
+    "name": "Product Romeo",
+    "quantity": 3,
+    "comments": [
+      {
+        "like": true,
+        "review": "Great value for the price, highly recommend!"
+      },
+      {
+        "like": true,
+        "review": "Very happy with the purchase, thank you!"
+      }
+    ],
+    "customer_description": {
+      "skin_color": "Fair",
+      "nationality": "Polish"
+    }
+  },
+  {
+    "_id": "19",
+    "name": "Product Sierra",
+    "quantity": 1,
+    "comments": [
+      {
+        "like": true,
+        "review": "Absolutely love it! Perfect fit."
+      },
+      {
+        "like": false,
+        "review": "Product quality is not up to the mark."
+      }
+    ],
+    "customer_description": {
+      "skin_color": "Dark",
+      "nationality": "Finnish"
+    }
+  }
+]

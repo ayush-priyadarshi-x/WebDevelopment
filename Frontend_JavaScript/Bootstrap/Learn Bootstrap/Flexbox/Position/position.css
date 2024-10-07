@@ -1,0 +1,62 @@
+.container {
+  border: 5px solid black;
+}
+.row {
+  border: 3px solid red;
+}
+.col-2 {
+  border: 1px solid greenyellow;
+}
+.blue {
+  background-color: skyblue;
+}
+.wheat {
+  background-color: wheat;
+}
+.yellow {
+  background-color: yellow;
+}
+.red {
+  background-color: rgb(255, 83, 83);
+}
+.yellow_second {
+  background-color: rgb(222, 255, 103);
+}
+.pink {
+  background-color: pink;
+}
+/* Relative */
+.first {
+  height: 20vh;
+}
+.mya {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.671);
+}
+li {
+  list-style-type: none;
+  transition-duration: 100ms;
+  transition-property: all;
+  transition-timing-function: linear;
+}
+/* Track */
+::-webkit-scrollbar {
+  width: 10px;
+}
+.about {
+  height: 100px;
+}
+li:hover {
+  text-decoration: underline;
+  transform: translateY(-3px) !important;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #aaa; /* Gray background */
+  border-radius: 5px; /* Rounded corners */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #777; /* Darker gray on hover */
+}

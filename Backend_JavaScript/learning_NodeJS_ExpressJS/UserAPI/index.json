@@ -1,0 +1,51 @@
+{
+    {
+      "name": "John Doe",
+      "age": 20,
+      "gender": "male",
+      "major": "Computer Science",
+      "gpa": 3.5,
+      "hobbies": "reading"
+    },
+    {
+      "name": "Jane Smith",
+      "age": 21,
+      "gender": "female",
+      "major": "Engineering",
+      "gpa": 3.8,
+      "hobbies": "painting"
+    },
+    {
+      "name": "Michael Johnson",
+      "age": 22,
+      "gender": "male",
+      "major": "Biology",
+      "gpa": 3.2,
+      "hobbies": "photography"
+    },
+    {
+      "name": "Emily Brown",
+      "age": 19,
+      "gender": "female",
+      "major": "Mathematics",
+      "gpa": 3.9,
+      "hobbies": "traveling"
+    },
+    {
+      "name": "David Martinez",
+      "age": 20,
+      "gender": "male",
+      "major": "Business",
+      "gpa": 3.6,
+      "hobbies": "music"
+    },
+    {
+      "name": "Samantha Wilson",
+      "age": 21,
+      "gender": "female",
+      "major": "Psychology",
+      "gpa": 3.7,
+      "hobbies": "yoga"
+    }
+  }
+  

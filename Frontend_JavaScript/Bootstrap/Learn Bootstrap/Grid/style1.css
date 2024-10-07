@@ -1,0 +1,14 @@
+.container {
+  border: 5px solid black;
+}
+.row {
+  border: 3px solid red;
+  text-align: center;
+}
+.col {
+  border: 2px solid green;
+}
+.main_inp {
+  border: none;
+  background-color: transparent;
+}

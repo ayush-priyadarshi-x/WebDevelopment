@@ -1,0 +1,72 @@
+body {
+  overflow: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mycontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("background.png");
+  background-size: cover;
+}
+#mainbox {
+  width: 45vw;
+  background-image: url("mainboxback.png");
+  border-radius: 30px;
+  background-size: cover;
+}
+.myfonts {
+  font-family: "Fira Sans", sans-serif;
+}
+.inputsection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.para {
+  width: 100%;
+  font-size: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.input {
+  width: 60%;
+}
+#imagebox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main_head {
+  font-size: 150px;
+}
+@media screen and (max-width: 900px) {
+  .main_head {
+    font-size: 120px;
+  }
+}
+@media screen and (max-width: 710px) {
+  .main_head {
+    font-size: 100px;
+  }
+  #mainbox {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .main_head {
+    font-size: 60px;
+  }
+  #mainbox {
+    width: 90%;
+  }
+}

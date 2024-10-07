@@ -1,0 +1,33 @@
+<form
+  action="/users/login"
+  method="POST"
+  class="row d-flex justify-content-center"
+>
+  <i class="fa-solid fa-right-to-bracket fa-5x" style="width: 10%"></i>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      name="email"
+      placeholder="something@gmail.com"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Password</label>
+    <input
+      type="password"
+      class="form-control"
+      id="password"
+      name="password"
+      placeholder="...."
+    />
+  </div>
+  <button type="submit" class="btn btn-md btn-danger" style="width: 70%">
+    Log In
+  </button>
+  <p class="text-center">
+    Don't have an account? <a href="/users/signup">Register</a>
+  </p>
+</form>

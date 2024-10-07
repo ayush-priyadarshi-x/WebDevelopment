@@ -1,0 +1,67 @@
+.heliotrope {
+  background-color: #e056fd;
+}
+
+.falling-star {
+  background-color: #cad3c8;
+}
+
+.ship-officer {
+  background-color: #2c3a47;
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  grid-template-rows: repeat(5, 1fr); /* 5 rows */
+  gap: 10px; /* Space between the buttons */
+}
+
+.btn-orange {
+  background-color: #fe9f2b;
+}
+.btn-orange:hover {
+  background-color: #fa951a;
+}
+
+.btn-dark {
+  background-color: #303952;
+}
+.btn-dark:hover {
+  background-color: #2a3144;
+}
+
+#main-input:focus {
+  border: 0px;
+}
+
+.btn-grid-area-1 {
+  grid-column: span 1;
+}
+.btn-grid-area-2 {
+  grid-column: span 2;
+}
+@keyframes question-animation {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    font-size: 10px;
+  }
+}
+
+@keyframes answer-animation {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    font-size: 20px;
+  }
+}
+
+.question-animation {
+  animation: question-animation 0.5s forwards;
+}
+.answer-animation {
+  animation: answer-animation 0.5s forwards;
+}

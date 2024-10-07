@@ -1,0 +1,155 @@
+[
+    {
+      "name": "John Doe",
+      "class": "10A",
+      "roll_number": 101,
+      "marks": {
+        "physics": 85,
+        "chemistry": 78,
+        "maths": 92
+      }
+    },
+    {
+      "name": "Alice Smith",
+      "class": "10A",
+      "roll_number": 102,
+      "marks": {
+        "physics": 90,
+        "chemistry": 82,
+        "maths": 88
+      }
+    },
+    {
+      "name": "Michael Johnson",
+      "class": "10A",
+      "roll_number": 103,
+      "marks": {
+        "physics": 78,
+        "chemistry": 85,
+        "maths": 90
+      }
+    },
+    {
+      "name": "Michael Johnson",
+      "class": "10A",
+      "roll_number": 103,
+      "marks": [
+        {"pass":true, "movie": "Pi"},
+        {"pass":false, "movie": "Halo"}
+      ]
+},
+{
+    "name": "Michael Johnson",
+    "class": "10A",
+    "roll_number": 103,
+    "marks": [
+          {"pass":true, "movie": "Oppenheimer"},
+          {"pass":false, "movie": "Forresh Gump"}
+    ]
+    },
+    
+    {"name": "Rashmi", "class": 11, "roll_number": 1083, "age": 16},
+    {"name": "Saurabh", "class": 8, "roll_number": 1084, "age": 13},
+    {"name": "Rekha", "class": 12, "roll_number": 1085, "age": 17},
+    {"name": "Amit", "class": 10, "roll_number": 1086, "age": 15},
+    {"name": "Rajesh", "class": 9, "roll_number": 1087, "age": 14},
+    {"name": "Asha", "class": 11, "roll_number": 1088, "age": 16},
+    {"name": "Manish", "class": 8, "roll_number": 1089, "age": 13},
+    {"name": "Anjali", "class": 12, "roll_number": 1090, "age": 17},
+    {"name": "Deepak", "class": 10, "roll_number": 1091, "age": 15},
+    {"name": "Neha", "class": 9, "roll_number": 1092, "age": 14},
+    {"name": "Ritu", "class": 11, "roll_number": 1093, "age": 16},
+    {"name": "Suresh", "class": 8, "roll_number": 1094, "age": 13},
+    {"name": "Sunita", "class": 12, "roll_number": 1095, "age": 17},
+    {"name": "Ankit", "class": 10, "roll_number": 1096, "age": 15},
+    {"name": "Shikha", "class": 9, "roll_number": 1097, "age": 14},
+    {"name": "Rohit", "class": 11, "roll_number": 1098, "age": 16},
+    {"name": "Rajeev", "class": 8, "roll_number": 1099, "age": 13},
+    {"name": "Poonam", "class": 12, "roll_number": 1100, "age": 17},
+    {
+  "products": [
+    {
+      "name": "Product Alpha",
+      "quantity": 2,
+      "comments": [
+        {
+          "like": true,
+          "review": "Excellent quality!"
+        }
+      ],
+      "customer_description": [
+        {
+          "skin_color": "Fair",
+          "nationality": "American"
+        },
+        {
+          "skin_color": "Dark",
+          "nationality": "Indian"
+        }
+      ]
+    },
+    {
+      "name": "Product Beta",
+      "quantity": 5,
+      "comments": [
+        {
+          "like": true,
+          "review": "Impressive product, exceeded expectations."
+        }
+      ],
+      "customer_description": [
+        {
+          "skin_color": "Medium",
+          "nationality": "Chinese"
+        },
+        {
+          "skin_color": "Fair",
+          "nationality": "British"
+        }
+      ]
+    },
+    {
+      "name": "Product Gamma",
+      "quantity": 1,
+      "comments": [
+        {
+          "like": false,
+          "review": "Not what I expected, disappointed."
+        }
+      ],
+      "customer_description": [
+        {
+          "skin_color": "Dark",
+          "nationality": "Brazilian"
+        },
+        {
+          "skin_color": "Fair",
+          "nationality": "German"
+        }
+      ]
+    },
+    {
+      "name": "Product Delta",
+      "quantity": 3,
+      "comments": [
+        {
+          "like": true,
+          "review": "Absolutely love it! Perfect fit."
+        }
+      ],
+      "customer_description": [
+        {
+          "skin_color": "Dark",
+          "nationality": "French"
+        },
+        {
+          "skin_color": "Medium",
+          "nationality": "Canadian"
+        }
+      ]
+    }
+  ]
+}
+    
+
+  ]

@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow: none;
+}
+.container {
+  margin-top: -23px;
+  background-image: url("background.png");
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  grid-template-rows: repeat(5, 20%);
+}
+.main_heading {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+}
+.main_div {
+  grid-row: 3 / 4;
+  grid-column: 2 / 3;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.cal_con {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #6565fc;
+  border-radius: 20px;
+  height: 19vh;
+  width: 30vw;
+}
+.fonts {
+  font-family: "Poppins", sans-serif;
+}
+.upper_heading {
+  color: rgb(251, 227, 48);
+}
+.lower_heading {
+  color: white;
+}
+.border {
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  height: 30%;
+}
+#calculate {
+  background-color: #ff7300;
+  border-radius: 0px 20px 20px 0px;
+  margin-left: 0;
+  height: 34%;
+}
+#birthdate {
+  width: 70%;
+  border: #ff7300 solid 2px;
+  height: 30%;
+  margin-right: 0;
+  border-radius: 20px 0px 0px 20px;
+}
+#message {
+  color: #ffffff;
+  font-size: 26px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  grid-area: 4 / 2 / 5 / 3;
+}
+@media screen and (max-width: 600px) {
+  .container {
+    display: grid;
+    grid-template-columns: 20% 70% 10%;
+  }
+  .cal_con {
+    width: 70%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .container {
+    display: grid;
+    grid-template-columns: 20% 80%;
+  }
+  .cal_con {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 300px) {
+  .main_heading {
+    grid-area: 2/ 1/ 3/ 3;
+  }
+  .main_div {
+    grid-area: 3/1/4/3;
+  }
+  #message {
+    grid-area: 4/1/5/3;
+  }
+}

@@ -1,0 +1,17 @@
+.row {
+  height: 80vh;
+}
+.blended-background {
+  background: linear-gradient(145deg, #eb2f06 60%, #e55039 20%, #ff5e57 20%);
+}
+.btn {
+  background-color: purple;
+  background: linear-gradient(to right top, #be2edd, #e056fd 80%, white 20%);
+  background-size: 200%;
+
+  width: 40%;
+  transition: background-position ease-in-out 200ms 0s;
+}
+.btn:hover {
+  background-position: right;
+}

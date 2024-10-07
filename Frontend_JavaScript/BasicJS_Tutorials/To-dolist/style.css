@@ -1,0 +1,103 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  background-image: url("background.png");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  background-image: url(card_background.png);
+  display: flex;
+  background-size: cover;
+  height: 80vh;
+  flex-direction: column;
+  border-radius: 30px;
+  width: 25vw;
+}
+.data {
+  margin-top: 38px;
+  margin-left: 30px;
+  margin-right: 30px;
+  height: 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 30px;
+  background: #e1e1e1;
+}
+.fonts {
+  font-family: "Poppins", sans-serif;
+}
+.input {
+  border-radius: 30px;
+  outline: none;
+  border: none;
+  height: 98%;
+  width: 70%;
+  margin: 0;
+  background-color: transparent;
+}
+.submit {
+  height: 90%;
+  width: 25%;
+  margin: 0;
+  border-radius: 30px;
+  outline: none;
+  border: none;
+  background-color: #eb5746;
+}
+.main_head {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: -25px;
+}
+#todoimage {
+  background-image: url("todoimage.png");
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  margin-left: 14px;
+}
+.checkboxdiv {
+  display: flex;
+  justify-content: space-between;
+}
+.checkbox {
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 20px;
+}
+.remove-button {
+  margin: 0;
+  outline: none;
+  border: none;
+  background-color: transparent;
+}
+@media screen and (max-width: 1100px) {
+  .card {
+    width: 40vw;
+  }
+}
+@media screen and (max-width: 900px) {
+  .card {
+    width: 65vw;
+  }
+}
+@media screen and (max-width: 450px) {
+  .card {
+    width: 90vw;
+  }
+}
+.input:focus {
+  border-color: #007bff; /* Blue border color */
+}

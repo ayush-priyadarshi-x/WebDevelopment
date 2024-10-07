@@ -1,0 +1,30 @@
+@keyframes slideLeft {
+  from {
+    transition: translateX(-150px);
+  }
+  to {
+    transform: translateX(10px);
+  }
+}
+/* 
+.container {
+  border: 5px solid black;
+  height: 50vh;
+}
+.row {
+  border: 3px solid red;
+  height: 100%;
+} */
+h1 {
+  animation: slideLeft 2000ms ease-in-out 0ms infinite reverse both;
+  /* animation-name: slideLeft;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: reverse; */
+  background-color: greenyellow;
+  border: 2px solid green;
+  height: 10%;
+  width: 10vw;
+  /* transform: translateX(-1000px); */
+}

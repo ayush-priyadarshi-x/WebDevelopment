@@ -1,0 +1,27 @@
+.container {
+  border: 5px solid black;
+}
+#websitename {
+  text-align: center;
+  background-color: rgb(245, 115, 115);
+}
+#email {
+  text-align: center;
+}
+li {
+  list-style-type: disc;
+  display: inline;
+  margin-left: 10px;
+}
+a {
+  color: #1172ff;
+  text-decoration: none;
+  transition-duration: 0.1s;
+  transition-property: all;
+  transition-timing-function: ease-in-out;
+}
+a:hover {
+  transform: translateY(-2px);
+  color: #1172ff;
+  text-decoration: underline;
+}

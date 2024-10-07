@@ -1,0 +1,50 @@
+body {
+  overflow: none;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  background: url("background.png");
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+.gamebox {
+  width: 35vw;
+  padding: 50px;
+  height: 80vh;
+  background-color: white;
+  border-radius: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+.content {
+  width: 30%;
+  height: 80%;
+}
+.b-right {
+  border-right: 2px solid black;
+}
+.b-left {
+  border-left: 2px solid black;
+}
+.b-bottom {
+  border-bottom: 2px solid black;
+}
+.b-top {
+  border-top: 2px solid black;
+}
+.item {
+  font-size: 122px;
+  text-align: center;
+  font-weight: lighter;
+  font-family: "Poppins", sans-serif;
+}
+.item:hover {
+  background-color: rgb(250, 245, 235);
+}

@@ -1,0 +1,54 @@
+html {
+  overflow-x: hidden;
+}
+body {
+  overflow-x: hidden;
+}
+.container-fluid {
+  height: 100vh;
+}
+.icon {
+  border-radius: 5px;
+  height: 50px;
+  width: 50px;
+  animation: side 0.4s 1.2s;
+}
+.icon::before {
+  position: absolute;
+  content: "";
+  background-color: white;
+  width: 50px;
+  height: 5px;
+  transform: translate(-25px, -12px);
+  box-shadow: rgb(220, 53, 69) 35px -5px 0px, white 15px -5px 0px;
+}
+
+.btn.click .icon::before {
+  transform-origin: left;
+  animation: up 0.5s 0.5s forwards;
+}
+@keyframes deleteMessage {
+  100% {
+    transform: translate(-125px, -22px) scale(0);
+  }
+}
+@keyframes side {
+  0% {
+    transform: translate(0px);
+  }
+  100% {
+    transform: translate(60px);
+  }
+}
+.message {
+  animation: deleteMessage 0.8s ease-in-out 0.3s forwards;
+}
+.btn {
+  padding: 30px;
+}
+.btn.rotate .icon::before {
+  transform-origin: left;
+  transform: rotate(-15deg) translate(-25px, -12px);
+  transition: all 0.3s;
+  transition-delay: 0.3s;
+}
