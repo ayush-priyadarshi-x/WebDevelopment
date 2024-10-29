@@ -53,9 +53,15 @@ export default function Login() {
               </button>
             </form>
             -
-            <button className="w-full flex justify-start gap-3 bg-neutral-100 rounded-lg  p-2 ">
-              Google
-            </button>
+            <form
+              action={async function () {
+                await signIn("google");
+              }}
+            >
+              <button className="w-full flex justify-start gap-3 bg-neutral-100 rounded-lg  p-2 ">
+                Google
+              </button>
+            </form>
           </div>
         </div>
       </div>
