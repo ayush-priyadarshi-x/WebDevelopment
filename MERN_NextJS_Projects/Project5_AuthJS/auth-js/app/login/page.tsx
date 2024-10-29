@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { signIn } from "@/auth";
 
 export default function Login() {
   return (
@@ -42,9 +43,16 @@ export default function Login() {
           </p>
           <hr />
           <div className="mt-5 flex flex-col space-y-3">
-            <button className="w-full  flex justify-start gap-3 bg-neutral-100 rounded-lg  p-2  ">
-              GitHub
-            </button>
+            <form
+              action={async function () {
+                await signIn("github");
+              }}
+            >
+              <button className="w-full  flex justify-start gap-3 bg-neutral-100 rounded-lg  p-2  ">
+                GitHub
+              </button>
+            </form>
+            -
             <button className="w-full flex justify-start gap-3 bg-neutral-100 rounded-lg  p-2 ">
               Google
             </button>
