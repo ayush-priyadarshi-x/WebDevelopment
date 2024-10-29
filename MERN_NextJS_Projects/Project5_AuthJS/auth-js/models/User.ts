@@ -32,4 +32,6 @@ const userSchema = new mongoose.Schema({
 });
 
 // Change the model name to 'User'
-export const user = mongoose.model("authUsers", userSchema);
+
+const user = mongoose.model("authUsers", userSchema);
+export { user };
