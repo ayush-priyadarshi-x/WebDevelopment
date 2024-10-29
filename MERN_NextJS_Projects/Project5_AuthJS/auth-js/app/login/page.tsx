@@ -1,3 +1,5 @@
+"use client";
+import { login } from "@/action/user";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Button } from "@/components/ui/button";
@@ -14,18 +16,21 @@ export default function Login() {
             </h2>
             <p>Please log in to continue</p>
           </div>
-          <div className="flex flex-col gap-4 mt-4">
-            <div>
-              <Label htmlFor="email">Email</Label>
-              <Input type="email" name="email" placeholder="Email" />
+          <form action={login}>
+            <div className="flex flex-col gap-4 mt-4">
+              <div>
+                <Label htmlFor="email">Email</Label>
+                <Input type="email" name="email" placeholder="Email" />
+              </div>
+              <div>
+                <Label htmlFor="password">Password</Label>
+                <Input type="password" name="password" placeholder="Password" />
+              </div>
             </div>
-            <div>
-              <Label htmlFor="password">Password</Label>
-              <Input type="password" name="password" placeholder="Password" />
-            </div>
-          </div>
-
-          <Button className="w-full my-5">Log In</Button>
+            <Button className="w-full my-5" type="submit">
+              Log In
+            </Button>
+          </form>
 
           {/* GitHub Login Button */}
 

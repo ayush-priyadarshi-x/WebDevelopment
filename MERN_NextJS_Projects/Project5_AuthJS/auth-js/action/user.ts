@@ -1,8 +1,26 @@
 "use server";
 
-import bcrypt from "bcrypt"; // Import bcrypt for hashing passwords
+import bcrypt from "bcryptjs";
 import connectDB from "@/lib/db";
 import { user } from "@/models/User"; // Ensure you import the correct User model
+import { CredentialsSignin } from "next-auth";
+import { signIn } from "next-auth/react";
+
+const login = async (formData: FormData) => {
+  const email = (await formData.get("email")) as string;
+  const password = (await formData.get("password")) as string;
+  try {
+    await signIn("credentials", {
+      redirect: false,
+      callbackUrl: "/",
+      email,
+      password,
+    });
+  } catch (error) {
+    const someError = error as CredentialsSignin;
+    return someError.cause;
+  }
+};
 
 const register = async (formData: FormData) => {
   // Hash the password
@@ -26,4 +44,4 @@ const register = async (formData: FormData) => {
   }
 };
 
-export { register };
+export { register, login };

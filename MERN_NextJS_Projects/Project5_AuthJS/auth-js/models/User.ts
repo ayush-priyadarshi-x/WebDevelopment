@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { model } from "mongoose";
 
 const userSchema = new mongoose.Schema({
   firstName: {
@@ -31,7 +31,7 @@ const userSchema = new mongoose.Schema({
   },
 });
 
-// Change the model name to 'User'
+// Use the correct case when checking for the existing model
+const user = mongoose.models.authusers || model("authUsers", userSchema);
 
-const user = mongoose.model("authUsers", userSchema);
 export { user };
