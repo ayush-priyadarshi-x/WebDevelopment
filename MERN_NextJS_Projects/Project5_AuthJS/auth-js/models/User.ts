@@ -1,4 +1,14 @@
-import mongoose, { model } from "mongoose";
+import mongoose from "mongoose";
+
+interface User {
+  firstName: string;
+  lastName: string;
+  email: string;
+  password?: string; // Optional because `select: false` means it might not always be present
+  role?: "user" | "admin"; // Optional with default value
+  image?: string;
+  authProviderId?: string;
+}
 
 const userSchema = new mongoose.Schema({
   firstName: {
@@ -32,6 +42,8 @@ const userSchema = new mongoose.Schema({
 });
 
 // Use the correct case when checking for the existing model
-const user = mongoose.models.authusers || model("authUsers", userSchema);
+const user =
+  (mongoose.models.user as mongoose.Model<User>) ||
+  mongoose.model("User", userSchema);
 
 export { user };
