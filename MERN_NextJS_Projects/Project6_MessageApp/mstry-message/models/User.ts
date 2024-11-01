@@ -1,5 +1,6 @@
 import mongoose, { Schema, Document } from "mongoose";
 
+// Message interface and schema
 export interface Message extends Document {
   content: string;
   createdAt: Date;
@@ -17,7 +18,8 @@ const messageSchema: Schema<Message> = new Schema({
   },
 });
 
-export interface user extends Document {
+// User interface and schema
+export interface User extends Document {
   username: string;
   email: string;
   password: string;
@@ -28,30 +30,30 @@ export interface user extends Document {
   messages: Message[];
 }
 
-const userSchema: Schema<user> = new Schema({
+const userSchema: Schema<User> = new Schema({
   username: {
     type: String,
-    required: [true, " User name is required. "],
-    trime: true,
+    required: [true, "Username is required."],
+    trim: true, // Fixed typo here
     unique: true,
   },
   email: {
     type: String,
-    required: [true, " Email is required. "],
+    required: [true, "Email is required."],
     unique: true,
-    match: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "Please provide a valid email "],
+    match: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "Please provide a valid email."],
   },
   password: {
     type: String,
-    required: [true, " Password is required. "],
+    required: [true, "Password is required."],
   },
   verifyCode: {
     type: String,
-    required: [true, " Verify code is required . "],
+    required: [true, "Verify code is required."],
   },
   verifyCodeExpiry: {
     type: Date,
-    required: [true, " Verify code expiry is required. "],
+    required: [true, "Verify code expiry is required."],
   },
   isVerified: {
     type: Boolean,
@@ -64,7 +66,7 @@ const userSchema: Schema<user> = new Schema({
   messages: [messageSchema],
 });
 
+// Check for existing model and avoid recompilation error
 const userModel =
-  (mongoose.models.user as mongoose.Model<user>) ||
-  mongoose.model("User", userSchema);
+  mongoose.models.User || mongoose.model<User>("mstry-message", userSchema);
 export default userModel;
