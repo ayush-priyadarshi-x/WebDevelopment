@@ -68,5 +68,6 @@ const userSchema: Schema<User> = new Schema({
 
 // Check for existing model and avoid recompilation error
 const userModel =
-  mongoose.models.User || mongoose.model<User>("mstry-message", userSchema);
+  mongoose.models["mstry-message"] ||
+  mongoose.model<User>("mstry-message", userSchema);
 export default userModel;
