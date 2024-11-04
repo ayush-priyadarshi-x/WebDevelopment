@@ -7,24 +7,13 @@ export async function middleware(request: NextRequest) {
   const token = await getToken({ req: request });
   const url = request.nextUrl;
 
+  // If no token is found, redirect to /sign-up
   if (!token) {
-    // Allow unauthenticated access to auth pages only
-    if (
-      url.pathname.startsWith("/sign-in") ||
-      url.pathname.startsWith("/sign-up") ||
-      url.pathname.startsWith("/verify")
-    ) {
-      return NextResponse.next();
-    }
-    return NextResponse.redirect(new URL("/home", request.url));
+    return NextResponse.redirect(new URL("/sign-in", request.url));
   }
 
-  // Redirect authenticated users away from auth pages to the dashboard
-  if (
-    url.pathname.startsWith("/sign-in") ||
-    url.pathname.startsWith("/sign-up") ||
-    url.pathname.startsWith("/verify")
-  ) {
+  // If token is found, redirect to /dashboard
+  if (url.pathname === "/") {
     return NextResponse.redirect(new URL("/dashboard", request.url));
   }
 
@@ -32,5 +21,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/", "/dashboard/:path*", "/verify/:path*", "/home", "/sign-in"],
+  matcher: ["/"], // Only match the root path
 };
