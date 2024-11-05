@@ -1,6 +1,9 @@
 import { Toaster } from "@/components/ui/toaster";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { ToastProvider } from "@/components/ui/toast";
+
+import SessionProviderWrapper from "@/components/SessionProviderWrapper";
 
 import "./globals.css";
 
@@ -27,12 +30,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-        <Toaster />
-      </body>
+      <SessionProviderWrapper>
+        <ToastProvider>
+          <body
+            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          >
+            {children}
+            <Toaster />
+          </body>
+        </ToastProvider>
+      </SessionProviderWrapper>
     </html>
   );
 }
