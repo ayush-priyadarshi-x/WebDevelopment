@@ -114,14 +114,16 @@ const Page = () => {
 
   return (
     <>
-      <div className="flex justify-center items-center mt-10">
-        <Switch
-          checked={isSwitchOn}
-          disabled={isFetchAcceptMessages}
-          text={isSwitchOn ? "Accept Messages: On" : "Accept Messages: Off"}
-          onChange={() => setIsSwitchOn(!isSwitchOn)}
-        />
-        <div className="border border-black  rounded-md w-2/3 flex justify-between items-center h-[50px] p-0">
+      <div className="md:flex justify-center items-center mt-10 ">
+        <div className="my-[5vh] flex justify-center align-center w-full md:m-0">
+          <Switch
+            checked={isSwitchOn}
+            disabled={isFetchAcceptMessages}
+            text={isSwitchOn ? "Accept Messages: On" : "Accept Messages: Off"}
+            onChange={() => setIsSwitchOn(!isSwitchOn)}
+          />
+        </div>
+        <div className="border border-black  rounded-md w-2/3 flex justify-between items-center h-[50px] w-full">
           <Input
             name="profileUrl"
             value={ProfileUrl}
@@ -136,7 +138,7 @@ const Page = () => {
           </button>
         </div>
       </div>
-      <div className="grid grid-cols-3 truncate my-[10vh] grid-y-2">
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 truncate my-[10vh] grid-y-2">
         {!isFetchingMessage ? (
           message.length > 0 ? (
             message.map((msg) => (

@@ -31,10 +31,11 @@ interface MessageCardProp {
   onMessageDelete: (messageId: string) => void;
 }
 
-function timeAgo(dateString: Date) {
+function timeAgo(dateString: string | Date): string {
   const now: Date = new Date();
   const givenDate: Date = new Date(dateString);
-  const diffInMilliseconds: number = now - givenDate;
+
+  const diffInMilliseconds: number = now.getTime() - givenDate.getTime();
 
   const diffInMinutes = Math.floor(diffInMilliseconds / (1000 * 60));
   const diffInHours = Math.floor(diffInMilliseconds / (1000 * 60 * 60));
@@ -80,7 +81,7 @@ const MessageCard = ({ message, onMessageDelete }: MessageCardProp) => {
 
   return (
     <>
-      <div className="mx-5">
+      <div className="sm:mx-5">
         <Card>
           <CardHeader>
             <CardTitle>{}</CardTitle>
@@ -88,23 +89,31 @@ const MessageCard = ({ message, onMessageDelete }: MessageCardProp) => {
               <AlertDialogTrigger asChild>
                 <Button
                   variant={"destructive"}
-                  className="rounded-lg px-5 py-3 bg-red-500 text-white border border-red-500 hover:text-red-500 hover:bg-white duration-200"
+                  className="rounded-lg px-5 py-3 bg-red-500 text-white border border-red-500 hover:text-red-500 hover:bg-white duration-200 md:w-full w-[18vw]"
                 >
-                  <X className="w-5 h-5" />
+                  X
                 </Button>
               </AlertDialogTrigger>
-              <AlertDialogContent>
-                <AlertDialogHeader>
-                  <AlertDialogTitle>Are you sure?</AlertDialogTitle>
-                  <AlertDialogDescription>
-                    This action will delete your message.
+              <AlertDialogContent className="bg-white p-8 rounded-lg shadow-lg max-w-lg mx-auto">
+                <AlertDialogHeader className="text-center">
+                  <AlertDialogTitle className="text-xl font-semibold text-gray-800">
+                    Are you sure?
+                  </AlertDialogTitle>
+                  <AlertDialogDescription className="text-sm text-gray-600 mt-2">
+                    This action will permanently delete your message. Please
+                    confirm to proceed.
                   </AlertDialogDescription>
                 </AlertDialogHeader>
-                <AlertDialogFooter>
-                  <AlertDialogCancel>Cancel</AlertDialogCancel>
+                <AlertDialogFooter className="flex justify-between space-x-4 mt-4">
+                  <AlertDialogCancel className="px-5 py-2 bg-gray-300 text-gray-700 rounded-lg hover:bg-gray-400 duration-200">
+                    Cancel
+                  </AlertDialogCancel>
                   <AlertDialogAction
-                    onClick={() => handleOnDeleteConfirm(message._id)}
-                  ></AlertDialogAction>
+                    onClick={() => handleOnDeleteConfirm()}
+                    className="px-5 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600 duration-200"
+                  >
+                    Confirm
+                  </AlertDialogAction>
                 </AlertDialogFooter>
               </AlertDialogContent>
             </AlertDialog>
@@ -112,10 +121,10 @@ const MessageCard = ({ message, onMessageDelete }: MessageCardProp) => {
             <CardDescription></CardDescription>
           </CardHeader>
           <CardContent>
-            <p>{message.content}</p>
+            <p className="truncate">{message.content}</p>
           </CardContent>
           <CardFooter>
-            <p className="text-right w-full text-lg font-bold">
+            <p className="text-right w-full text-lg font-bold ">
               -{timeAgo(message.createdAt)}
             </p>
           </CardFooter>
