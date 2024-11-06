@@ -21,14 +21,36 @@ import {
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
-import { Message } from "models/User";
 import { useToast } from "@/hooks/use-toast";
 import axios, { AxiosError } from "axios";
 import { ApiResponse } from "@/types/ApiResponse";
+import { messageInterface } from "@/app/(app)/dashboard/page";
 
 interface MessageCardProp {
-  message: Message;
+  message: messageInterface;
   onMessageDelete: (messageId: string) => void;
+}
+
+function timeAgo(dateString: Date) {
+  const now: Date = new Date();
+  const givenDate: Date = new Date(dateString);
+  const diffInMilliseconds: number = now - givenDate;
+
+  const diffInMinutes = Math.floor(diffInMilliseconds / (1000 * 60));
+  const diffInHours = Math.floor(diffInMilliseconds / (1000 * 60 * 60));
+  const diffInDays = Math.floor(diffInMilliseconds / (1000 * 60 * 60 * 24));
+
+  if (diffInDays > 0) {
+    return diffInDays === 1 ? "1 day ago" : `${diffInDays} days ago`;
+  } else if (diffInHours > 0) {
+    return diffInHours === 1 ? "1 hour ago" : `${diffInHours} hours ago`;
+  } else if (diffInMinutes > 0) {
+    return diffInMinutes === 1
+      ? "1 minute ago"
+      : `${diffInMinutes} minutes ago`;
+  } else {
+    return "Just now"; // If the difference is less than 1 minute
+  }
 }
 
 const MessageCard = ({ message, onMessageDelete }: MessageCardProp) => {
@@ -58,40 +80,44 @@ const MessageCard = ({ message, onMessageDelete }: MessageCardProp) => {
 
   return (
     <>
-      <div>
+      <div className="mx-5">
         <Card>
           <CardHeader>
-            <CardTitle>{message.content}</CardTitle>
+            <CardTitle>{}</CardTitle>
             <AlertDialog>
               <AlertDialogTrigger asChild>
-                <Button variant={"destructive"}>
+                <Button
+                  variant={"destructive"}
+                  className="rounded-lg px-5 py-3 bg-red-500 text-white border border-red-500 hover:text-red-500 hover:bg-white duration-200"
+                >
                   <X className="w-5 h-5" />
                 </Button>
               </AlertDialogTrigger>
               <AlertDialogContent>
                 <AlertDialogHeader>
-                  <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+                  <AlertDialogTitle>Are you sure?</AlertDialogTitle>
                   <AlertDialogDescription>
-                    This action cannot be undone. This will permanently delete
-                    your account and remove your data from our servers.
+                    This action will delete your message.
                   </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>
                   <AlertDialogCancel>Cancel</AlertDialogCancel>
                   <AlertDialogAction
-                    onClick={handleOnDeleteConfirm}
+                    onClick={() => handleOnDeleteConfirm(message._id)}
                   ></AlertDialogAction>
                 </AlertDialogFooter>
               </AlertDialogContent>
             </AlertDialog>
 
-            <CardDescription>Card Description</CardDescription>
+            <CardDescription></CardDescription>
           </CardHeader>
           <CardContent>
-            <p>Card Content</p>
+            <p>{message.content}</p>
           </CardContent>
           <CardFooter>
-            <p>Card Footer</p>
+            <p className="text-right w-full text-lg font-bold">
+              -{timeAgo(message.createdAt)}
+            </p>
           </CardFooter>
         </Card>
       </div>

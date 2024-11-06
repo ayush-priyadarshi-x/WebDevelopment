@@ -4,7 +4,6 @@ import dbConnect from "@/lib/dbConnect";
 import userModel from "../../../../models/User";
 import { User } from "next-auth";
 import { NextResponse } from "next/server";
-import mongoose from "mongoose";
 
 export async function GET() {
   await dbConnect();
@@ -20,14 +19,30 @@ export async function GET() {
       { status: 404 }
     );
   }
-  const userId = new mongoose.Types.ObjectId(user._id);
+  const userId = user.email;
 
   try {
     const user = await userModel.aggregate([
-      { $match: { id: userId } },
-      { $unwind: "$messages" },
-      { $sort: { "messages.createdAt": -1 } },
-      { $group: { _id: "$_id", messages: { $push: "messages" } } },
+      { $match: { email: userId } },
+      {
+        $unwind: "$messages",
+      },
+      {
+        $sort: { "messages.createdAt": -1 },
+      },
+      {
+        $addFields: {
+          "messages.messageId": {
+            $concat: [{ $toString: "$_id" }, "-", { $toString: { $rand: {} } }],
+          },
+        },
+      },
+      {
+        $group: {
+          _id: "$_id",
+          messages: { $push: "$messages" },
+        },
+      },
     ]);
 
     if (!user || user.length === 0) {
@@ -36,6 +51,7 @@ export async function GET() {
         { status: 401 }
       );
     }
+    console.log("Users : ", user);
     return NextResponse.json(
       { success: true, message: user[0].messages },
       { status: 200 }

@@ -6,6 +6,14 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useToast } from "@/hooks/use-toast";
 import { Input } from "@/components/ui/input";
+import MessageCard from "@/components/MessageCard";
+
+export interface messageInterface {
+  content: string;
+  createdAt: Date;
+  messageId: string;
+  _id: string;
+}
 
 const Page = () => {
   const { data: session } = useSession();
@@ -15,6 +23,24 @@ const Page = () => {
   const [isSwitchOn, setIsSwitchOn] = useState(false);
   const [isFetchAcceptMessages, setIsFetchAcceptMessages] =
     useState<boolean>(false);
+  const [message, setMessage] = useState<messageInterface[]>([]);
+  const [isFetchingMessage, setIsFetchingMessage] = useState<boolean>(true);
+
+  const getMessages = async () => {
+    try {
+      const response = await axios.get("/api/get-messages");
+      console.log("Messages : ", response.data.message);
+      setMessage(response.data.message);
+    } catch (error) {
+      console.log("There was some error , ", error);
+      toast({
+        title: "Error while fetching messages, ",
+        variant: "destructive",
+      });
+    } finally {
+      setIsFetchingMessage(false);
+    }
+  };
 
   const fetchIsAcceptMessage = async () => {
     setIsFetchAcceptMessages(true);
@@ -30,6 +56,7 @@ const Page = () => {
   };
 
   useEffect(() => {
+    getMessages();
     fetchIsAcceptMessage();
   }, []);
 
@@ -49,6 +76,10 @@ const Page = () => {
         variant: "destructive",
       });
     }
+  };
+
+  const onMessageDelete = (id: string) => {
+    setMessage(message.filter((msg) => msg.messageId !== id));
   };
 
   const copyToClipboard = (text: string) => {
@@ -82,28 +113,47 @@ const Page = () => {
   }
 
   return (
-    <div className="flex justify-center items-center mt-10">
-      <Switch
-        checked={isSwitchOn}
-        disabled={isFetchAcceptMessages}
-        text={isSwitchOn ? "Accept Messages: On" : "Accept Messages: Off"}
-        onChange={() => setIsSwitchOn(!isSwitchOn)}
-      />
-      <div className="border border-black  rounded-md w-2/3 flex justify-between items-center h-[50px] p-0">
-        <Input
-          name="profileUrl"
-          value={ProfileUrl}
-          readOnly
-          className="border border-0 text-xl font-bold"
+    <>
+      <div className="flex justify-center items-center mt-10">
+        <Switch
+          checked={isSwitchOn}
+          disabled={isFetchAcceptMessages}
+          text={isSwitchOn ? "Accept Messages: On" : "Accept Messages: Off"}
+          onChange={() => setIsSwitchOn(!isSwitchOn)}
         />
-        <button
-          className="border border-black  rounded-md px-3 h-full bg-black text-white hover:bg-white hover:text-black duration-200 text-xl"
-          onClick={() => copyToClipboard(ProfileUrl)}
-        >
-          Copy
-        </button>
+        <div className="border border-black  rounded-md w-2/3 flex justify-between items-center h-[50px] p-0">
+          <Input
+            name="profileUrl"
+            value={ProfileUrl}
+            readOnly
+            className="border border-0 text-xl font-bold"
+          />
+          <button
+            className="border border-black  rounded-md px-3 h-full bg-black text-white hover:bg-white hover:text-black duration-200 text-xl"
+            onClick={() => copyToClipboard(ProfileUrl)}
+          >
+            Copy
+          </button>
+        </div>
       </div>
-    </div>
+      <div className="grid grid-cols-3 truncate my-[10vh] grid-y-2">
+        {!isFetchingMessage ? (
+          message.length > 0 ? (
+            message.map((msg) => (
+              <MessageCard
+                key={msg.messageId || msg._id}
+                message={msg}
+                onMessageDelete={onMessageDelete}
+              />
+            ))
+          ) : (
+            <div>No messages to display</div>
+          )
+        ) : (
+          <div>Loading...</div>
+        )}
+      </div>
+    </>
   );
 };
 

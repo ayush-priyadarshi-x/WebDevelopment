@@ -6,6 +6,7 @@ import { ToastProvider } from "@/components/ui/toast";
 import SessionProviderWrapper from "@/components/SessionProviderWrapper";
 
 import "./globals.css";
+import OurFamily from "@/components/OurFamily";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -36,6 +37,7 @@ export default function RootLayout({
             className={`${geistSans.variable} ${geistMono.variable} antialiased`}
           >
             {children}
+            <OurFamily />
             <Toaster />
           </body>
         </ToastProvider>
